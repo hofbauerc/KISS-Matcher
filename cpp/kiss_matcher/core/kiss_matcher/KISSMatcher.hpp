@@ -150,6 +150,10 @@ class KISSMatcher {
     return robin_matching_->getFinalCorrespondences();
   }
 
+  std::pair<int, int> getFinalInliers(){
+    return std::make_pair(solver_->getTranslationInliers().size(), solver_->getRotationInliers().size());
+  }
+
   void clear() {
     src_keypoints_.clear();
     tgt_keypoints_.clear();
